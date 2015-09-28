@@ -1,2 +1,15 @@
-# uncoverage
-A set of HTML chunks to uncover all the edge cases of your CSS not having full coverage. Especially handy if you're styling output from a WYSIWYG editor in some CMS that rhymes with err..., um, taco!
+# Uncoverage
+
+This is an attempt to finally assemble a long page using as many combos of HTML as possible, so we can see if a given _base_ CSS file covers enough.
+
+## TODO
+
+- [ ] Paragraphs
+- [ ] Headers
+- [ ] Images (`<img>`)
+- [ ] Images (`<picture>`)
+- [ ] Quotes
+- [ ] Blockquotes
+- [ ] Tables
+- [ ] Links
+
