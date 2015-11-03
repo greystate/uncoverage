@@ -1,0 +1,48 @@
+<script>
+(function() {
+
+function $$(selector, context) { return (context || document).querySelector(selector); }
+function addStyleSheet(file) {
+	var existing = $$('link[href="' + file + '"]');
+	if (existing != null) return;
+	
+	var linkTag = document.createElement("link");
+	linkTag.setAttribute("rel", "stylesheet");
+	linkTag.setAttribute("href", file);
+	$$("head").appendChild(linkTag);
+}
+
+var queryPairs = document.location.search.substr(1).split("&");
+var cssQuery = "", pair, plen = queryPairs.length;
+for (var i = 0; i < plen; i++) {
+	pair = queryPairs[i].split("=");
+	if (pair[0] == "css") {
+		cssQuery = pair[1];
+		break;
+	}
+}
+
+if (cssQuery != "") {
+	addStyleSheet(cssQuery);
+	$$("input").value = cssQuery;
+}
+
+var cssForm = $$("form");
+if (cssForm != null) {
+	cssForm.addEventListener("submit", function(event) {
+		event.preventDefault();
+		var cssFile = $$("input").value;
+		if (cssFile != "") {
+			addStyleSheet(cssFile);
+		}
+		return false;
+	}, false);
+	
+	$$('button[type="reset"]').addEventListener("click", function (event) {
+		var links = $$("link", $$("head"));
+		if (links != null) { links.remove(); }
+	}, false);
+}
+
+})();
+</script>
