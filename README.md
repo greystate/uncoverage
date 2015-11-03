@@ -14,9 +14,8 @@ you didn't quite cover.
 - [x] Headers
 - [ ] Images (`<img>`)
 - [ ] Images (`<picture>`)
-- [ ] Quotes
-- [ ] Blockquotes
-- [ ] Tables
+- [x] Quotes & Blockquotes
+- [x] Tables
 - [ ] Links
 - [ ] Lists (ordered, unordered, definition)
 
